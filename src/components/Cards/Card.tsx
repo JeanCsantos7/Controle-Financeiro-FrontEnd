@@ -19,7 +19,7 @@ const CardReceitas = () => {
         async function consumirAPI() {
             const receitasData = await axios
                 .get(
-                    'https://controle-financeiro-back-da8ip8umc-jeancsantos7s-projects.vercel.app/totalReceitas',
+                    'https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.apptotalReceitas',
                 )
                 .then(response =>
                     response.data.map((item: any) => ({
@@ -29,7 +29,7 @@ const CardReceitas = () => {
 
             const despesasData = await axios
                 .get(
-                    'https://controle-financeiro-back-da8ip8umc-jeancsantos7s-projects.vercel.app/totalDespesas',
+                    'https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.apptotalDespesas',
                 )
                 .then(response =>
                     response.data.map((item: any) => ({
