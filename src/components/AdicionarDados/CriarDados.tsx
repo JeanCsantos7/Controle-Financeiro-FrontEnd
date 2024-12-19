@@ -16,7 +16,7 @@ const CriarDados = () => {
         try {
             categoria === 'Receita'
                 ? await axios.post(
-                      'https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.appadicionarReceita',
+                      'https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.app/adicionarReceita',
                       {
                           descricao: descricao,
                           valor: valor,
@@ -24,7 +24,7 @@ const CriarDados = () => {
                       },
                   )
                 : await axios.post(
-                      'https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.appadicionarDespesa',
+                      'https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.app/adicionarDespesa',
                       {
                           descricao: descricao,
                           valor: valor,
