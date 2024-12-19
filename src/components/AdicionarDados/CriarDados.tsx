@@ -15,16 +15,22 @@ const CriarDados = () => {
         e.preventDefault();
         try {
             categoria === 'Receita'
-                ? await axios.post('http://localhost:5000/adicionarReceita', {
-                      descricao: descricao,
-                      valor: valor,
-                      categoria: categoria,
-                  })
-                : await axios.post('http://localhost:5000/adicionarDespesa', {
-                      descricao: descricao,
-                      valor: valor,
-                      categoria: categoria,
-                  });
+                ? await axios.post(
+                      'https://controle-financeiro-back-zeta.vercel.app/adicionarReceita',
+                      {
+                          descricao: descricao,
+                          valor: valor,
+                          categoria: categoria,
+                      },
+                  )
+                : await axios.post(
+                      'https://controle-financeiro-back-zeta.vercel.app/adicionarDespesa',
+                      {
+                          descricao: descricao,
+                          valor: valor,
+                          categoria: categoria,
+                      },
+                  );
             setMensagemSucesso(<AlertSucess />);
 
             setTimeout(() => {

@@ -26,12 +26,12 @@ const ExibirDados = () => {
     async function findAll() {
         try {
             const responseReceita = await axios.get(
-                'http://localhost:5000/receitas',
+                'https://controle-financeiro-back-zeta.vercel.app/receitas',
             );
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
-                'http://localhost:5000/despesas',
+                'https://controle-financeiro-back-zeta.vercel.app/despesas',
             );
             setDespesas(responseDespesas.data);
         } catch (error) {
@@ -47,24 +47,34 @@ const ExibirDados = () => {
     }, [despesas, receitas]);
 
     async function Deletes(id: number) {
-        await axios.delete(`http://localhost:5000/deletarReceita/${id}`);
-        await axios.delete(`http://localhost:5000/deletarDespesa/${id}`);
+        await axios.delete(
+            `https://controle-financeiro-back-zeta.vercel.app/${id}`,
+        );
+        await axios.delete(
+            `https://controle-financeiro-back-zeta.vercel.app/${id}`,
+        );
         findAll();
     }
 
     async function Update(id: number) {
         try {
-            await axios.put(`http://localhost:5000/atualizarReceita/${id}`, {
-                descricao: editarDescricao,
-                valor: editarValor,
-                categoria: editarCategoria,
-            });
+            await axios.put(
+                `https://controle-financeiro-back-zeta.vercel.app/${id}`,
+                {
+                    descricao: editarDescricao,
+                    valor: editarValor,
+                    categoria: editarCategoria,
+                },
+            );
 
-            await axios.put(`http://localhost:5000/atualizarDespesa/${id}`, {
-                descricao: editarDescricao,
-                valor: editarValor,
-                categoria: editarCategoria,
-            });
+            await axios.put(
+                `https://controle-financeiro-back-zeta.vercel.app/${id}`,
+                {
+                    descricao: editarDescricao,
+                    valor: editarValor,
+                    categoria: editarCategoria,
+                },
+            );
 
             setFormularioEdicao(false);
             setFormularioNormal(true);

@@ -18,7 +18,9 @@ const CardReceitas = () => {
     useEffect(() => {
         async function consumirAPI() {
             const receitasData = await axios
-                .get('http://localhost:5000/totalReceitas')
+                .get(
+                    'https://controle-financeiro-back-zeta.vercel.app/totalReceitas',
+                )
                 .then(response =>
                     response.data.map((item: any) => ({
                         total: Number(item.total),
@@ -26,7 +28,9 @@ const CardReceitas = () => {
                 );
 
             const despesasData = await axios
-                .get('http://localhost:5000/totalDespesas')
+                .get(
+                    'https://controle-financeiro-back-zeta.vercel.app/totalDespesas',
+                )
                 .then(response =>
                     response.data.map((item: any) => ({
                         total: Number(item.total),
