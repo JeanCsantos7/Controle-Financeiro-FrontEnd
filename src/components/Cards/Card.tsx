@@ -19,7 +19,7 @@ const CardReceitas = () => {
         async function consumirAPI() {
             const receitasData = await axios
                 .get(
-                    'controle-financeiro-backend-production.up.railway.app/totalReceitas',
+                    'http://controle-financeiro-backend-production.up.railway.app/totalReceitas',
                 )
                 .then(response =>
                     response.data.map((item: any) => ({
@@ -29,7 +29,7 @@ const CardReceitas = () => {
 
             const despesasData = await axios
                 .get(
-                    'controle-financeiro-backend-production.up.railway.app/totalDespesas',
+                    'http://controle-financeiro-backend-production.up.railway.app/totalDespesas',
                 )
                 .then(response =>
                     response.data.map((item: any) => ({

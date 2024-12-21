@@ -48,10 +48,10 @@ const ExibirDados = () => {
 
     async function Deletes(id: number) {
         await axios.delete(
-            `controle-financeiro-backend-production.up.railway.app/${id}`,
+            `http://controle-financeiro-backend-production.up.railway.app/${id}`,
         );
         await axios.delete(
-            `controle-financeiro-backend-production.up.railway.app/${id}`,
+            `http://controle-financeiro-backend-production.up.railway.app/${id}`,
         );
         findAll();
     }
@@ -59,7 +59,7 @@ const ExibirDados = () => {
     async function Update(id: number) {
         try {
             await axios.put(
-                `controle-financeiro-backend-production.up.railway.app/${id}`,
+                `http://controle-financeiro-backend-production.up.railway.app/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
@@ -68,7 +68,7 @@ const ExibirDados = () => {
             );
 
             await axios.put(
-                `controle-financeiro-backend-production.up.railway.app/${id}`,
+                `http://controle-financeiro-backend-production.up.railway.app/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
