@@ -26,12 +26,12 @@ const ExibirDados = () => {
     async function findAll() {
         try {
             const responseReceita = await axios.get(
-                'controle-financeiro-backend-production.up.railway.app/receitas',
+                'https://controle-financeiro-backend-production.up.railway.app/receitas',
             );
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
-                'controle-financeiro-backend-production.up.railway.app/despesas',
+                'https://controle-financeiro-backend-production.up.railway.app/despesas',
             );
             setDespesas(responseDespesas.data);
         } catch (error) {
