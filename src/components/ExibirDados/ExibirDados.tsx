@@ -26,12 +26,12 @@ const ExibirDados = () => {
     async function findAll() {
         try {
             const responseReceita = await axios.get(
-                'https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.app/receitas',
+                'https://controle-financeiro-back-end.vercel.app/receitas',
             );
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
-                'https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.app/despesas',
+                'https://controle-financeiro-back-end.vercel.app/despesas',
             );
             setDespesas(responseDespesas.data);
         } catch (error) {
@@ -48,10 +48,10 @@ const ExibirDados = () => {
 
     async function Deletes(id: number) {
         await axios.delete(
-            `https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.app/${id}`,
+            `https://controle-financeiro-back-end.vercel.app/${id}`,
         );
         await axios.delete(
-            `https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.app/${id}`,
+            `https://controle-financeiro-back-end.vercel.app/${id}`,
         );
         findAll();
     }
@@ -59,7 +59,7 @@ const ExibirDados = () => {
     async function Update(id: number) {
         try {
             await axios.put(
-                `https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.app/${id}`,
+                `https://controle-financeiro-back-end.vercel.app/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
@@ -68,7 +68,7 @@ const ExibirDados = () => {
             );
 
             await axios.put(
-                `https://controle-financeiro-back-pt4rurdhe-jeancsantos7s-projects.vercel.app/${id}`,
+                `https://controle-financeiro-back-end.vercel.app/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
