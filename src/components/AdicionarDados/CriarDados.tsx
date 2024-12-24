@@ -16,7 +16,7 @@ const CriarDados = () => {
         try {
             categoria === 'Receita'
                 ? await axios.post(
-                      'https://backend-financas-production.up.railway.app/adicionarReceita',
+                      'http://backend-financas-production.up.railway.app/adicionarReceita',
                       {
                           descricao: descricao,
                           valor: valor,
@@ -24,7 +24,7 @@ const CriarDados = () => {
                       },
                   )
                 : await axios.post(
-                      'https://backend-financas-production.up.railway.app/adicionarDespesa',
+                      'http://backend-financas-production.up.railway.app/adicionarDespesa',
                       {
                           descricao: descricao,
                           valor: valor,
