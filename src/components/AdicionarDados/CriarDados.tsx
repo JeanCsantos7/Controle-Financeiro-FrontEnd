@@ -16,19 +16,30 @@ const CriarDados = () => {
         try {
             categoria === 'Receita'
                 ? await axios.post(
-                      'https://backend-financas-production.up.railway.app/adicionarReceita',
+                      'https://backend-financas-mauve.vercel.app/adicionarReceita',
                       {
                           descricao: descricao,
                           valor: valor,
                           categoria: categoria,
                       },
+
+                      {
+                          headers: {
+                              'Content-Type': 'application/json', // Necessário aqui
+                          },
+                      },
                   )
                 : await axios.post(
-                      'https://backend-financas-production.up.railway.app/adicionarDespesa',
+                      'https://backend-financas-mauve.vercel.app/adicionarDespesa',
                       {
                           descricao: descricao,
                           valor: valor,
                           categoria: categoria,
+                      },
+                      {
+                          headers: {
+                              'Content-Type': 'application/json', // Necessário aqui
+                          },
                       },
                   );
             setMensagemSucesso(<AlertSucess />);
@@ -48,7 +59,7 @@ const CriarDados = () => {
             <div className="flex items-center justify-center gap-6 mt-9 p-3">
                 <Card.Root className="lg:w-[78%] w-full h-auto border-[2.5px] border-[#949494] p-4">
                     <h1 className="font-Poppins text-xl font-semibold text-center mt-2 mb-2">
-                        Adicionar Dados
+                        Adicionar os Dados
                     </h1>
                     <hr className="bg-[#949494] h-[2px] w-[85%] m-auto mb-4" />
                     <Card.Header>
@@ -60,7 +71,6 @@ const CriarDados = () => {
                             className="flex flex-wrap gap-4 justify-between sm:flex-row sm:items-end"
                             onSubmit={criarDadosAPI}
                         >
-                            {/* Campo de Descrição */}
                             <div className="flex flex-col w-full sm:w-[23%]">
                                 <label className="font-Poppins font-medium mb-1">
                                     Descrição
@@ -74,7 +84,6 @@ const CriarDados = () => {
                                 />
                             </div>
 
-                            {/* Campo de Valor */}
                             <div className="flex flex-col w-full sm:w-[23%]">
                                 <label className="font-Poppins font-medium mb-1">
                                     Valor
@@ -88,7 +97,6 @@ const CriarDados = () => {
                                 />
                             </div>
 
-                            {/* Campo de Categoria */}
                             <div className="flex flex-col w-full sm:w-[23%]">
                                 <label className="font-Poppins font-medium mb-1">
                                     Categoria
@@ -97,13 +105,12 @@ const CriarDados = () => {
                                     className="w-full outline-none rounded-md border-2 p-2 border-[#696969]"
                                     onChange={e => setCategoria(e.target.value)}
                                 >
-                                    <option>Escolha uma opção</option>
+                                    <option>Faça a escolha de uma opção</option>
                                     <option value="Receita">Receita</option>
                                     <option value="Despesa">Despesa</option>
                                 </select>
                             </div>
 
-                            {/* Botão Adicionar */}
                             <div className="w-full sm:w-[23%]">
                                 <button className="w-full h-[4vh] rounded-md p-2 text-[#FFF] font-Poppins text-sm font-semibold bg-[#6dac3a] hover:bg-[#5a8e2f] transition-colors">
                                     Adicionar
