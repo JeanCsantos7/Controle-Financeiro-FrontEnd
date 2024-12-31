@@ -26,12 +26,12 @@ const ExibirDados = () => {
     async function findAll() {
         try {
             const responseReceita = await axios.get(
-                'https://backend-financas-mauve.vercel.app/receitas',
+                'https://backend-financas-production.up.railway.app/receitas',
             );
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
-                'https://backend-financas-mauve.vercel.app/despesas',
+                'https://backend-financas-production.up.railway.app/despesas',
             );
             setDespesas(responseDespesas.data);
         } catch (error) {
@@ -47,15 +47,19 @@ const ExibirDados = () => {
     }, [despesas, receitas]);
 
     async function Deletes(id: number) {
-        await axios.delete(`https://backend-financas-mauve.vercel.app/${id}`);
-        await axios.delete(`https://backend-financas-mauve.vercel.app/${id}`);
+        await axios.delete(
+            `https://backend-financas-production.up.railway.app/${id}`,
+        );
+        await axios.delete(
+            `https://backend-financas-production.up.railway.app/${id}`,
+        );
         findAll();
     }
 
     async function Update(id: number) {
         try {
             await axios.put(
-                `https://backend-financas-mauve.vercel.app/${id}`,
+                `https://backend-financas-production.up.railway.app/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
@@ -70,7 +74,7 @@ const ExibirDados = () => {
             );
 
             await axios.put(
-                `https://backend-financas-mauve.vercel.app/${id}`,
+                `https://backend-financas-production.up.railway.app/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,

@@ -18,7 +18,9 @@ const CardReceitas = () => {
     useEffect(() => {
         async function consumirAPI() {
             const receitasData = await axios
-                .get('https://backend-financas-mauve.vercel.app/totalReceitas')
+                .get(
+                    'https://backend-financas-production.up.railway.app/totalReceitas',
+                )
                 .then(response =>
                     response.data.map((item: any) => ({
                         total: Number(item.total),
@@ -26,7 +28,9 @@ const CardReceitas = () => {
                 );
 
             const despesasData = await axios
-                .get('https://backend-financas-mauve.vercel.app/totalDespesas')
+                .get(
+                    'https://backend-financas-production.up.railway.app/totalDespesas',
+                )
                 .then(response =>
                     response.data.map((item: any) => ({
                         total: Number(item.total),
