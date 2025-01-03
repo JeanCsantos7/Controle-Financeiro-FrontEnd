@@ -27,11 +27,13 @@ const ExibirDados = () => {
         try {
             const responseReceita = await axios.get(
                 'https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/receitas',
+                { withCredentials: true },
             );
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
                 'https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/despesas',
+                { withCredentials: true },
             );
             setDespesas(responseDespesas.data);
         } catch (error) {
