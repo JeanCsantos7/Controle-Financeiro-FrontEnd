@@ -26,13 +26,13 @@ const ExibirDados = () => {
     async function findAll() {
         try {
             const responseReceita = await axios.get(
-                'https://backend-financas-nktd.vercel.appreceitas',
+                'https://testefinanceiro.vercel.app/receitas',
                 { withCredentials: true },
             );
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
-                'https://backend-financas-nktd.vercel.appdespesas',
+                'https://testefinanceiro.vercel.app/appdespesas',
                 { withCredentials: true },
             );
             setDespesas(responseDespesas.data);
@@ -49,15 +49,15 @@ const ExibirDados = () => {
     }, [despesas, receitas]);
 
     async function Deletes(id: number) {
-        await axios.delete(`https://backend-financas-nktd.vercel.app/${id}`);
-        await axios.delete(`https://backend-financas-nktd.vercel.app/${id}`);
+        await axios.delete(`testefinanceiro.vercel.app/${id}`);
+        await axios.delete(`https://testefinanceiro.vercel.app/${id}`);
         findAll();
     }
 
     async function Update(id: number) {
         try {
             await axios.put(
-                `https://backend-financas-nktd.vercel.app/${id}`,
+                `https://testefinanceiro.vercel.app/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
@@ -72,7 +72,7 @@ const ExibirDados = () => {
             );
 
             await axios.put(
-                `https://backend-financas-nktd.vercel.app/${id}`,
+                `https://testefinanceiro.vercel.app/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
