@@ -16,30 +16,19 @@ const CriarDados = () => {
         try {
             categoria === 'Receita'
                 ? await axios.post(
-                      'https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/adicionarReceita',
+                      'https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/adicionarReceita',
                       {
                           descricao: descricao,
                           valor: valor,
                           categoria: categoria,
-                      },
-
-                      {
-                          headers: {
-                              'Content-Type': 'application/json', // Necessário aqui
-                          },
                       },
                   )
                 : await axios.post(
-                      'https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/adicionarDespesa',
+                      'https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/adicionarDespesa',
                       {
                           descricao: descricao,
                           valor: valor,
                           categoria: categoria,
-                      },
-                      {
-                          headers: {
-                              'Content-Type': 'application/json', // Necessário aqui
-                          },
                       },
                   );
             setMensagemSucesso(<AlertSucess />);

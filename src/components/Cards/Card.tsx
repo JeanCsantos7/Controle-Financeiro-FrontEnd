@@ -19,7 +19,7 @@ const CardReceitas = () => {
         async function consumirAPI() {
             const receitasData = await axios
                 .get(
-                    'https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/totalReceitas',
+                    'https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/totalReceitas',
                 )
                 .then(response =>
                     response.data.map((item: any) => ({
@@ -29,7 +29,7 @@ const CardReceitas = () => {
 
             const despesasData = await axios
                 .get(
-                    'https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/totalDespesas',
+                    'https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/totalDespesas',
                 )
                 .then(response =>
                     response.data.map((item: any) => ({

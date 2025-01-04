@@ -26,13 +26,13 @@ const ExibirDados = () => {
     async function findAll() {
         try {
             const responseReceita = await axios.get(
-                'https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/receitas',
+                'https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/receitas',
                 { withCredentials: true },
             );
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
-                'https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/despesas',
+                'https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/despesas',
                 { withCredentials: true },
             );
             setDespesas(responseDespesas.data);
@@ -50,10 +50,10 @@ const ExibirDados = () => {
 
     async function Deletes(id: number) {
         await axios.delete(
-            `https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/${id}`,
+            `https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/${id}`,
         );
         await axios.delete(
-            `https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/${id}`,
+            `https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/${id}`,
         );
         findAll();
     }
@@ -61,7 +61,7 @@ const ExibirDados = () => {
     async function Update(id: number) {
         try {
             await axios.put(
-                `https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/${id}`,
+                `https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
@@ -76,7 +76,7 @@ const ExibirDados = () => {
             );
 
             await axios.put(
-                `https://backend-financas-nktd-g0nib5ebq-jeancsantos7s-projects.vercel.app/${id}`,
+                `https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
