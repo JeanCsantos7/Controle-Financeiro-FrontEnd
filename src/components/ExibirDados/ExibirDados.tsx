@@ -49,7 +49,7 @@ const ExibirDados = () => {
     }, [despesas, receitas]);
 
     async function Deletes(id: number) {
-        await axios.delete(`testefinanceiro.vercel.app/${id}`);
+        await axios.delete(`https://testefinanceiro.vercel.app/${id}`);
         await axios.delete(`https://testefinanceiro.vercel.app/${id}`);
         findAll();
     }
