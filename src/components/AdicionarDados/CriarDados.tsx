@@ -16,7 +16,7 @@ const CriarDados = () => {
         try {
             categoria === 'Receita'
                 ? await axios.post(
-                      'https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/adicionarReceita',
+                      'https://backend-financas-nktd.vercel.app/adicionarReceita',
                       {
                           descricao: descricao,
                           valor: valor,
@@ -24,7 +24,7 @@ const CriarDados = () => {
                       },
                   )
                 : await axios.post(
-                      'https://backend-financas-nktd-kvpz74cmo-jeancsantos7s-projects.vercel.app/adicionarDespesa',
+                      'https://backend-financas-nktd.vercel.app/adicionarDespesa',
                       {
                           descricao: descricao,
                           valor: valor,
