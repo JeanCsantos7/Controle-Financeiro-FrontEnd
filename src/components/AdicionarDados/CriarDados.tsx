@@ -24,7 +24,7 @@ const CriarDados = () => {
                       },
                   )
                 : await axios.post(
-                      'testefinanceiro.vercel.app/adicionarDespesa',
+                      'https://testefinanceiro.vercel.app/adicionarDespesa',
                       {
                           descricao: descricao,
                           valor: valor,
