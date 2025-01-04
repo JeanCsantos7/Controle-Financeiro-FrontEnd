@@ -32,7 +32,7 @@ const ExibirDados = () => {
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
-                'https://testefinanceiro.vercel.app/appdespesas',
+                'https://testefinanceiro.vercel.app/despesas',
                 { withCredentials: true },
             );
             setDespesas(responseDespesas.data);
