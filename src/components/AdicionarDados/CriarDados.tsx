@@ -46,12 +46,12 @@ const CriarDados = () => {
             {mensagemSucesso}
 
             <div className="flex items-center justify-center gap-6 mt-9 p-3">
-                <Card.Root className="lg:w-[78%] w-full h-auto border-[2.5px] border-[#949494] p-4">
+                <Card.Root className="lg:w-[78%] w-full h-auto border-[2.5px] bg-[#FFF] border-[#949494] p-4">
                     <h1 className="font-Poppins text-xl font-semibold text-center mt-2 mb-2">
                         Adicionar os Dados
                     </h1>
                     <hr className="bg-[#949494] h-[2px] w-[85%] m-auto mb-4" />
-                    <Card.Header>
+                    <Card.Header className="bg-[#FFF]">
                         <Heading className="font-Poppins font-semibold text-center"></Heading>
                     </Card.Header>
                     <Card.Body>

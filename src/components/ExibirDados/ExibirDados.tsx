@@ -67,7 +67,7 @@ const ExibirDados = () => {
     async function Update(id: number) {
         try {
             await axios.put(
-                `https://testefinanceiro.vercel.app/atualizarReceita${id}`,
+                `https://testefinanceiro.vercel.app/atualizarReceita/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
@@ -79,7 +79,7 @@ const ExibirDados = () => {
             );
 
             await axios.put(
-                `https://testefinanceiro.vercel.app/atualizarDespesa/${id}`,
+                ` https://testefinanceiro.vercel.app/atualizarDespesa/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
@@ -115,8 +115,8 @@ const ExibirDados = () => {
                     {mensagemErro}
 
                     <div className="flex items-center justify-center gap-6 mt-9 p-3">
-                        <Card.Root className="lg:w-[78%] w-full border-[2.5px] border-[#949494]">
-                            <Card.Header>
+                        <Card.Root className="lg:w-[78%] w-full border-[2.5px] bg-[#FFF] border-[#949494]">
+                            <Card.Header className="bg-[#FFF]">
                                 <Heading className="flex w-full justify-between text-center font-Poppins font-semibold">
                                     <div className="flex-1">Descrição</div>
                                     <div className="flex-1">Valor</div>
@@ -209,12 +209,13 @@ const ExibirDados = () => {
             {formularioEdicao && (
                 <div>
                     <form
+                        className="lg:block"
                         onSubmit={e => {
                             e.preventDefault();
                             Update(id);
                         }}
                     >
-                        <div className="mt-2">
+                        <div className=" flex justify-center items-center  mt-2">
                             <input
                                 value={editarDescricao}
                                 onChange={e =>
@@ -223,11 +224,11 @@ const ExibirDados = () => {
                                 type="text"
                                 required
                                 autoComplete="off"
-                                className="outline-none font-Poppins block w-full h-12 rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] sm:text-sm"
+                                className="outline-none font-Poppins block w-[95%] h-12 rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] lg:w-[45%]"
                             />
                         </div>
 
-                        <div className="mt-2">
+                        <div className=" flex justify-center items-center  mt-2">
                             <input
                                 value={editarValor}
                                 onChange={e =>
@@ -236,11 +237,11 @@ const ExibirDados = () => {
                                 type="number"
                                 required
                                 autoComplete="off"
-                                className="outline-none font-Poppins block w-full h-12 rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] sm:text-sm"
+                                className="outline-none font-Poppins block w-[95%] h-12 rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] lg:w-[45%] "
                             />
                         </div>
 
-                        <div className="mt-2">
+                        <div className=" flex flex-col justify-center items-center  mt-2">
                             <input
                                 value={editarCategoria}
                                 onChange={e =>
@@ -249,11 +250,16 @@ const ExibirDados = () => {
                                 type="text"
                                 required
                                 autoComplete="off"
-                                className="outline-none font-Poppins block w-full h-12 rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] sm:text-sm"
+                                className=" outline-none w-[95%] font-Poppins rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] lg:w-[45%]"
                             />
-                        </div>
 
-                        <button type="submit">Salvar</button>
+                            <button
+                                className="   rounded-md m-4 p-3 text-[#FFF] w-[95%] font-Poppins text-sm font-semibold bg-[#6dac3a] hover:bg-[#5a8e2f] mt-6 lg: w-[45%]"
+                                type="submit"
+                            >
+                                Salvar
+                            </button>
+                        </div>
                     </form>
                 </div>
             )}
