@@ -47,7 +47,7 @@ const ExibirDados = () => {
 
     useEffect(() => {
         findAll();
-    }, []); // Removido loop desnecessário
+    }, [despesas, receitas]);
 
     async function Deletes(id: number) {
         try {
