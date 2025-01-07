@@ -47,11 +47,16 @@ const ExibirDados = () => {
 
     useEffect(() => {
         findAll();
-    }, [despesas, receitas]);
+    }, []);
 
     async function Deletes(id: number) {
         try {
-            await axios.delete(`https://testefinanceiro.vercel.app/${id}`);
+            await axios.delete(
+                `https://testefinanceiro.vercel.app/deletarReceita/${id}`,
+            );
+            await axios.delete(
+                `https://testefinanceiro.vercel.app/deletarDespesa/${id}`,
+            );
             findAll();
         } catch (error) {
             console.error(error);
@@ -62,7 +67,19 @@ const ExibirDados = () => {
     async function Update(id: number) {
         try {
             await axios.put(
-                `https://testefinanceiro.vercel.app/${id}`,
+                `https://testefinanceiro.vercel.app/atualizarReceita${id}`,
+                {
+                    descricao: editarDescricao,
+                    valor: editarValor,
+                    categoria: editarCategoria,
+                },
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                },
+            );
+
+            await axios.put(
+                `https://testefinanceiro.vercel.app/atualizarDespesa/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
