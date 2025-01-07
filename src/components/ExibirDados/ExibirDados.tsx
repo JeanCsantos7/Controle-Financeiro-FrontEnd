@@ -44,14 +44,19 @@ const ExibirDados = () => {
             }, 2200);
         }
     }
+
     useEffect(() => {
         findAll();
-    }, [despesas, receitas]);
+    }, []); // Removido loop desnecessário
 
     async function Deletes(id: number) {
-        await axios.delete(`https://testefinanceiro.vercel.app/${id}`);
-        await axios.delete(`https://testefinanceiro.vercel.app/${id}`);
-        findAll();
+        try {
+            await axios.delete(`https://testefinanceiro.vercel.app/${id}`);
+            findAll();
+        } catch (error) {
+            console.error(error);
+            setMensagemErro(<AlertError />);
+        }
     }
 
     async function Update(id: number) {
@@ -63,26 +68,8 @@ const ExibirDados = () => {
                     valor: editarValor,
                     categoria: editarCategoria,
                 },
-
                 {
-                    headers: {
-                        'Content-Type': 'application/json', // Necessário aqui
-                    },
-                },
-            );
-
-            await axios.put(
-                `https://testefinanceiro.vercel.app/${id}`,
-                {
-                    descricao: editarDescricao,
-                    valor: editarValor,
-                    categoria: editarCategoria,
-                },
-
-                {
-                    headers: {
-                        'Content-Type': 'application/json', // Necessário aqui
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                 },
             );
 
@@ -91,6 +78,7 @@ const ExibirDados = () => {
             findAll();
         } catch (error) {
             console.error(error);
+            setMensagemErro(<AlertError />);
         }
     }
 
@@ -248,7 +236,7 @@ const ExibirDados = () => {
                             />
                         </div>
 
-                        <button type="submit">adicionar</button>
+                        <button type="submit">Salvar</button>
                     </form>
                 </div>
             )}
