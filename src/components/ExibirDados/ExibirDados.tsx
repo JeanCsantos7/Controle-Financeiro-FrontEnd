@@ -66,13 +66,22 @@ const ExibirDados = () => {
                 descricao: editarDescricao,
                 valor: editarValor,
                 categoria: editarCategoria,
-            });
+            }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                },
+                await axios.put(
+                    `https://testefinanceiro.vercel.app/${id}`,
+                    {
+                        descricao: editarDescricao,
+                        valor: editarValor,
+                        categoria: editarCategoria,
+                    },
 
-            await axios.put(`https://testefinanceiro.vercel.app/${id}`, {
-                descricao: editarDescricao,
-                valor: editarValor,
-                categoria: editarCategoria,
-            });
+                    {
+                        headers: { 'Content-Type': 'application/json' },
+                    },
+                );
 
             setFormularioEdicao(false);
             setFormularioNormal(true);

@@ -91,7 +91,7 @@ const CriarDados = () => {
                                     Categoria
                                 </label>
                                 <select
-                                    className="w-full l bg-[#FFF] text-[#0f0f0f] text-[#0f0f0f]outline-none rounded-md border-2 p-2 border-[#696969]"
+                                    className="w-full  bg-[#FFF] text-[#0f0f0f] text-[#0f0f0f]outline-none rounded-md border-2 p-2 border-[#696969]"
                                     onChange={e => setCategoria(e.target.value)}
                                 >
                                     <option>Faça a escolha de uma opção</option>
