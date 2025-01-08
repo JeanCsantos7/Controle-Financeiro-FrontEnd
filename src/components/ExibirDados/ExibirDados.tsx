@@ -27,13 +27,19 @@ const ExibirDados = () => {
         try {
             const responseReceita = await axios.get(
                 'https://testefinanceiro.vercel.app/receitas',
-                { withCredentials: true },
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true,
+                },
             );
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
                 'https://testefinanceiro.vercel.app/despesas',
-                { withCredentials: true },
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true,
+                },
             );
             setDespesas(responseDespesas.data);
         } catch (error) {
