@@ -121,19 +121,25 @@ const ExibirDados = () => {
                                         className="flex justify-between w-full items-center"
                                     >
                                         <div className="flex-1 text-center">
-                                            {item.descricao}
+                                            <p className="text-[#0f0f0f]">
+                                                {item.descricao}
+                                            </p>
                                         </div>
                                         <div className="flex-1 text-center">
-                                            {item.valor.toLocaleString(
-                                                'pt-BR',
-                                                {
-                                                    style: 'currency',
-                                                    currency: 'BRL',
-                                                },
-                                            )}
+                                            <p className="text-[#0f0f0f]">
+                                                {item.valor.toLocaleString(
+                                                    'pt-BR',
+                                                    {
+                                                        style: 'currency',
+                                                        currency: 'BRL',
+                                                    },
+                                                )}
+                                            </p>
                                         </div>
                                         <div className="flex-1 text-center flex justify-center items-center gap-2">
-                                            {item.categoria}
+                                            <p className="text-[#0f0f0f]">
+                                                {item.categoria}
+                                            </p>
                                             <div className="flex gap-4">
                                                 <AiFillDelete
                                                     onClick={() =>
@@ -155,12 +161,14 @@ const ExibirDados = () => {
                                 {despesas?.map(item => (
                                     <Box
                                         key={item.id}
-                                        className="flex justify-between text-[#0f0f0f] w-full items-center"
+                                        className="flex justify-between w-full items-center"
                                     >
-                                        <div className="flex-1 text-[#0f0f0f] text-center">
-                                            {item.descricao}
+                                        <div className="flex-1  text-center">
+                                            <p className="text-[#0f0f0f]">
+                                                {item.descricao}
+                                            </p>
                                         </div>
-                                        <div className="flex-1 text-[#0f0f0f] text-center">
+                                        <div className="flex-1  text-center">
                                             {item.valor.toLocaleString(
                                                 'pt-BR',
                                                 {
@@ -169,8 +177,10 @@ const ExibirDados = () => {
                                                 },
                                             )}
                                         </div>
-                                        <div className="flex-1 text-[#0f0f0f] text-center flex justify-center items-center gap-2">
-                                            {item.categoria}
+                                        <div className="flex-1  text-center flex justify-center items-center gap-2">
+                                            <p className="text-[#0f0f0f]">
+                                                {item.categoria}
+                                            </p>
                                             <div className="flex gap-4">
                                                 <AiFillDelete
                                                     onClick={() =>
@@ -212,7 +222,7 @@ const ExibirDados = () => {
                                 type="text"
                                 required
                                 autoComplete="off"
-                                className="outline-none font-Poppins block w-[95%] h-12 rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] lg:w-[45%]"
+                                className="outline-none font-Poppins block w-[95%] h-12 rounded-md border p-3 bg-[#FFF] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] lg:w-[45%]"
                             />
                         </div>
 
@@ -225,7 +235,7 @@ const ExibirDados = () => {
                                 type="number"
                                 required
                                 autoComplete="off"
-                                className="outline-none font-Poppins block w-[95%] h-12 rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] lg:w-[45%] "
+                                className="outline-none font-Poppins block bg-[#FFF] w-[95%] h-12 rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] lg:w-[45%] "
                             />
                         </div>
 
@@ -238,7 +248,7 @@ const ExibirDados = () => {
                                 type="text"
                                 required
                                 autoComplete="off"
-                                className=" outline-none w-[95%] font-Poppins rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] lg:w-[45%]"
+                                className=" outline-none w-[95%] bg-[#FFF] font-Poppins rounded-md border p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#53a4e7] lg:w-[45%]"
                             />
 
                             <button
