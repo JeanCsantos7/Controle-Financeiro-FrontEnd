@@ -15,16 +15,22 @@ const CriarDados = () => {
         e.preventDefault();
         try {
             categoria === 'Receita'
-                ? await axios.post('http://localhost:5000/adicionarReceita', {
-                      descricao: descricao,
-                      valor: valor,
-                      categoria: categoria,
-                  })
-                : await axios.post('http://localhost:5000/adicionarDespesa', {
-                      descricao: descricao,
-                      valor: valor,
-                      categoria: categoria,
-                  });
+                ? await axios.post(
+                      'https://testefinanceiro.vercel.app/adicionarReceita',
+                      {
+                          descricao: descricao,
+                          valor: valor,
+                          categoria: categoria,
+                      },
+                  )
+                : await axios.post(
+                      'https://testefinanceiro.vercel.app/adicionarDespesa',
+                      {
+                          descricao: descricao,
+                          valor: valor,
+                          categoria: categoria,
+                      },
+                  );
             setMensagemSucesso(<AlertSucess />);
 
             setTimeout(() => {
@@ -85,7 +91,7 @@ const CriarDados = () => {
                                     Categoria
                                 </label>
                                 <select
-                                    className="w-full bg-[#FFF] text-[#0f0f0f]outline-none rounded-md border-2 p-2 border-[#696969]"
+                                    className="w-full l bg-[#FFF] text-[#0f0f0f] text-[#0f0f0f]outline-none rounded-md border-2 p-2 border-[#696969]"
                                     onChange={e => setCategoria(e.target.value)}
                                 >
                                     <option>Faça a escolha de uma opção</option>

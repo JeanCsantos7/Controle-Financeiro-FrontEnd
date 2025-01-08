@@ -18,7 +18,7 @@ const CardReceitas = () => {
     useEffect(() => {
         async function consumirAPI() {
             const receitasData = await axios
-                .get('http://localhost:5000/totalReceitas')
+                .get('https://testefinanceiro.vercel.app/totalReceitas')
                 .then(response =>
                     response.data.map((item: any) => ({
                         total: Number(item.total),
@@ -26,7 +26,7 @@ const CardReceitas = () => {
                 );
 
             const despesasData = await axios
-                .get('http://localhost:5000/totalDespesas')
+                .get('https://testefinanceiro.vercel.app/totalDespesas')
                 .then(response =>
                     response.data.map((item: any) => ({
                         total: Number(item.total),
@@ -61,7 +61,7 @@ const CardReceitas = () => {
                     <Card.Header className="bg-[#FFF]">
                         <Heading>
                             <span className="flex items-center gap-2">
-                                <h1 className="font-Poppins font-semibold text-center max-w-md">
+                                <h1 className="font-Poppins text-[#0f0f0f] font-semibold text-center max-w-md">
                                     Receitas
                                 </h1>
                                 <FaArrowCircleUp className="text-[#0eb34a] text-xl" />
@@ -82,7 +82,7 @@ const CardReceitas = () => {
                     <Card.Header className="bg-[#FFF]">
                         <Heading>
                             <span className="flex items-center gap-2">
-                                <h1 className="font-Poppins font-semibold text-center max-w-md">
+                                <h1 className="font-Poppins text-[#0f0f0f] font-semibold text-center max-w-md">
                                     Despesas
                                 </h1>
                                 <FaArrowCircleDown className="text-[#e32424] text-xl" />
@@ -105,7 +105,7 @@ const CardReceitas = () => {
                     <Card.Header className="bg-[#FFF]">
                         <Heading>
                             <span className="flex items-center gap-2">
-                                <h1 className="font-Poppins font-semibold text-center max-w-md">
+                                <h1 className="font-Poppins text-[#0f0f0f] font-semibold text-center max-w-md">
                                     Total
                                 </h1>
                                 <LuArrowUpDown className="text-[#0eb34a]  text-xl" />
