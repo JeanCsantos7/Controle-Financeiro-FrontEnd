@@ -26,14 +26,14 @@ const ExibirDados = () => {
     async function findAll() {
         try {
             const responseReceita = await axios.get(
-                'https://testefinanceiro.vercel.app/receitas',
-                { withCredentials: true },
+                'http://localhost:5000/receitas',
+                /* { withCredentials: true }, */
             );
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
-                'https://testefinanceiro.vercel.app/despesas',
-                { withCredentials: true },
+                'http://localhost:5000/despesas',
+                /*  { withCredentials: true }, */
             );
             setDespesas(responseDespesas.data);
         } catch (error) {
@@ -51,12 +51,8 @@ const ExibirDados = () => {
 
     async function Deletes(id: number) {
         try {
-            await axios.delete(
-                `https://testefinanceiro.vercel.app/deletarReceita/${id}`,
-            );
-            await axios.delete(
-                `https://testefinanceiro.vercel.app/deletarDespesa/${id}`,
-            );
+            await axios.delete(`http://localhost:5000/${id}`);
+            await axios.delete(`http://localhost:5000/${id}`);
             findAll();
         } catch (error) {
             console.error(error);
@@ -66,29 +62,17 @@ const ExibirDados = () => {
 
     async function Update(id: number) {
         try {
-            await axios.put(
-                `https://testefinanceiro.vercel.app/atualizarReceita/${id}`,
-                {
-                    descricao: editarDescricao,
-                    valor: editarValor,
-                    categoria: editarCategoria,
-                },
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                },
-            );
+            await axios.put(`http://localhost:5000/${id}`, {
+                descricao: editarDescricao,
+                valor: editarValor,
+                categoria: editarCategoria,
+            });
 
-            await axios.put(
-                ` https://testefinanceiro.vercel.app/atualizarDespesa/${id}`,
-                {
-                    descricao: editarDescricao,
-                    valor: editarValor,
-                    categoria: editarCategoria,
-                },
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                },
-            );
+            await axios.put(` http://localhost:5000/${id}`, {
+                descricao: editarDescricao,
+                valor: editarValor,
+                categoria: editarCategoria,
+            });
 
             setFormularioEdicao(false);
             setFormularioNormal(true);
@@ -118,9 +102,13 @@ const ExibirDados = () => {
                         <Card.Root className="lg:w-[78%] w-full border-[2.5px] bg-[#FFF] border-[#949494]">
                             <Card.Header className="bg-[#FFF]">
                                 <Heading className="flex w-full justify-between text-center font-Poppins font-semibold">
-                                    <div className="flex-1">Descrição</div>
-                                    <div className="flex-1">Valor</div>
-                                    <div className="flex-1 gap-4 flex justify-center items-center">
+                                    <div className="flex-1 text-[#0f0f0f]">
+                                        Descrição
+                                    </div>
+                                    <div className="flex-1 text-[#0f0f0f]">
+                                        Valor
+                                    </div>
+                                    <div className="flex-1 text-[#0f0f0f] gap-4 flex justify-center items-center">
                                         Categoria
                                     </div>
                                 </Heading>
@@ -167,12 +155,12 @@ const ExibirDados = () => {
                                 {despesas?.map(item => (
                                     <Box
                                         key={item.id}
-                                        className="flex justify-between w-full items-center"
+                                        className="flex justify-between text-[#0f0f0f] w-full items-center"
                                     >
-                                        <div className="flex-1 text-center">
+                                        <div className="flex-1 text-[#0f0f0f] text-center">
                                             {item.descricao}
                                         </div>
-                                        <div className="flex-1 text-center">
+                                        <div className="flex-1 text-[#0f0f0f] text-center">
                                             {item.valor.toLocaleString(
                                                 'pt-BR',
                                                 {
@@ -181,7 +169,7 @@ const ExibirDados = () => {
                                                 },
                                             )}
                                         </div>
-                                        <div className="flex-1 text-center flex justify-center items-center gap-2">
+                                        <div className="flex-1 text-[#0f0f0f] text-center flex justify-center items-center gap-2">
                                             {item.categoria}
                                             <div className="flex gap-4">
                                                 <AiFillDelete

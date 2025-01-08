@@ -18,7 +18,7 @@ const CardReceitas = () => {
     useEffect(() => {
         async function consumirAPI() {
             const receitasData = await axios
-                .get('https://testefinanceiro.vercel.app/totalReceitas')
+                .get('http://localhost:5000/totalReceitas')
                 .then(response =>
                     response.data.map((item: any) => ({
                         total: Number(item.total),
@@ -26,7 +26,7 @@ const CardReceitas = () => {
                 );
 
             const despesasData = await axios
-                .get('https://testefinanceiro.vercel.app/totalDespesas')
+                .get('http://localhost:5000/totalDespesas')
                 .then(response =>
                     response.data.map((item: any) => ({
                         total: Number(item.total),
@@ -57,8 +57,8 @@ const CardReceitas = () => {
     return (
         <Stack>
             <div className="flex items-center justify-center gap-6 mt-9 p-3">
-                <Card.Root className="lg:w-[25%] w-full border-[2.5px] border-[#949494]">
-                    <Card.Header>
+                <Card.Root className="lg:w-[25%] w-full border-[2.5px] bg-[#FFF] border-[#949494]">
+                    <Card.Header className="bg-[#FFF]">
                         <Heading>
                             <span className="flex items-center gap-2">
                                 <h1 className="font-Poppins font-semibold text-center max-w-md">
@@ -78,8 +78,8 @@ const CardReceitas = () => {
                     </Card.Body>
                 </Card.Root>
 
-                <Card.Root className="lg:w-[25%] w-full border-[2.5px] border-[#949494]">
-                    <Card.Header>
+                <Card.Root className="lg:w-[25%] w-full border-[2.5px] bg-[#FFF] border-[#949494]">
+                    <Card.Header className="bg-[#FFF]">
                         <Heading>
                             <span className="flex items-center gap-2">
                                 <h1 className="font-Poppins font-semibold text-center max-w-md">
@@ -101,8 +101,8 @@ const CardReceitas = () => {
                     </Card.Body>
                 </Card.Root>
 
-                <Card.Root className="lg:w-[25%] w-full border-[2.5px] border-[#949494]">
-                    <Card.Header>
+                <Card.Root className="lg:w-[25%] w-full border-[2.5px] bg-[#FFF] border-[#949494]">
+                    <Card.Header className="bg-[#FFF]">
                         <Heading>
                             <span className="flex items-center gap-2">
                                 <h1 className="font-Poppins font-semibold text-center max-w-md">
