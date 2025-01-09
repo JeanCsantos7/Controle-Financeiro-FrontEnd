@@ -29,6 +29,7 @@ const ExibirDados = () => {
                 'https://controlefinanceiro-back-phi.vercel.app/receitas',
                 {
                     withCredentials: true,
+                    headers: { 'Content-Type': 'application/json' },
                 },
             );
             setReceitas(responseReceita.data);
@@ -37,6 +38,7 @@ const ExibirDados = () => {
                 'https://controlefinanceiro-back-phi.vercel.app/despesas',
                 {
                     withCredentials: true,
+                    headers: { 'Content-Type': 'application/json' },
                 },
             );
             setDespesas(responseDespesas.data);
