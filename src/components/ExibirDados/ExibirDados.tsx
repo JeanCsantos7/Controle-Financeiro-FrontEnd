@@ -45,15 +45,15 @@ const ExibirDados = () => {
 
     useEffect(() => {
         findAll();
-    }, []);
+    }, [receitas, despesas]);
 
     async function Deletes(id: number) {
         try {
             await axios.delete(
-                `https://controlefinanceiro-back-phi.vercel.app/${id}`,
+                `https://controlefinanceiro-back-phi.vercel.app/deletarReceita/${id}`,
             );
             await axios.delete(
-                `https://controlefinanceiro-back-phi.vercel.app/${id}`,
+                `https://controlefinanceiro-back-phi.vercel.app/deletarDespesa/${id}`,
             );
             findAll();
         } catch (error) {
@@ -65,28 +65,30 @@ const ExibirDados = () => {
     async function Update(id: number) {
         try {
             await axios.put(
-                `https://controlefinanceiro-back-phi.vercel.app/${id}`,
+                `https://controlefinanceiro-back-phi.vercel.app/atualizarReceita/${id}`,
                 {
                     descricao: editarDescricao,
                     valor: editarValor,
                     categoria: editarCategoria,
                 },
-            ),
+
                 {
                     headers: { 'Content-Type': 'application/json' },
                 },
-                await axios.put(
-                    `https://controlefinanceiro-back-phi.vercel.app/${id}`,
-                    {
-                        descricao: editarDescricao,
-                        valor: editarValor,
-                        categoria: editarCategoria,
-                    },
+            );
 
-                    {
-                        headers: { 'Content-Type': 'application/json' },
-                    },
-                );
+            await axios.put(
+                `https://controlefinanceiro-back-phi.vercel.app/atualizarDespesa/${id}`,
+                {
+                    descricao: editarDescricao,
+                    valor: editarValor,
+                    categoria: editarCategoria,
+                },
+
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                },
+            );
 
             setFormularioEdicao(false);
             setFormularioNormal(true);
