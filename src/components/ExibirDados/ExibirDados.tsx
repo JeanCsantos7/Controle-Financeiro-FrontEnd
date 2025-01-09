@@ -26,7 +26,7 @@ const ExibirDados = () => {
     async function findAll() {
         try {
             const responseReceita = await axios.get(
-                'https://testefinanceiro.vercel.app/receitas',
+                'https://controlefinanceiro-back-phi.vercel.app/receitas',
                 {
                     withCredentials: true,
                 },
@@ -34,7 +34,7 @@ const ExibirDados = () => {
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
-                'https://testefinanceiro.vercel.app/despesas',
+                'https://controlefinanceiro-back-phi.vercel.app/despesas',
                 {
                     withCredentials: true,
                 },
@@ -55,8 +55,12 @@ const ExibirDados = () => {
 
     async function Deletes(id: number) {
         try {
-            await axios.delete(`https://testefinanceiro.vercel.app/${id}`);
-            await axios.delete(`https://testefinanceiro.vercel.app/${id}`);
+            await axios.delete(
+                `https://controlefinanceiro-back-phi.vercel.app/${id}`,
+            );
+            await axios.delete(
+                `https://controlefinanceiro-back-phi.vercel.app/${id}`,
+            );
             findAll();
         } catch (error) {
             console.error(error);
@@ -66,16 +70,19 @@ const ExibirDados = () => {
 
     async function Update(id: number) {
         try {
-            await axios.put(`https://testefinanceiro.vercel.app/${id}`, {
-                descricao: editarDescricao,
-                valor: editarValor,
-                categoria: editarCategoria,
-            }),
+            await axios.put(
+                `https://controlefinanceiro-back-phi.vercel.app/${id}`,
+                {
+                    descricao: editarDescricao,
+                    valor: editarValor,
+                    categoria: editarCategoria,
+                },
+            ),
                 {
                     headers: { 'Content-Type': 'application/json' },
                 },
                 await axios.put(
-                    `https://testefinanceiro.vercel.app/${id}`,
+                    `https://controlefinanceiro-back-phi.vercel.app/${id}`,
                     {
                         descricao: editarDescricao,
                         valor: editarValor,
