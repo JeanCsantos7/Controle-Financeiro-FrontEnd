@@ -16,7 +16,7 @@ const CriarDados = () => {
         try {
             categoria === 'Receita'
                 ? await axios.post(
-                      'https://testefinanceiro.vercel.app/adicionarReceita',
+                      'https://controlefinanceiro-back-phi.vercel.app/adicionarReceita',
                       {
                           descricao: descricao,
                           valor: valor,
@@ -28,7 +28,7 @@ const CriarDados = () => {
                       },
                   )
                 : await axios.post(
-                      'https://testefinanceiro.vercel.app/adicionarDespesa',
+                      'https://controlefinanceiro-back-phi.vercel.app/adicionarDespesa',
                       {
                           descricao: descricao,
                           valor: valor,
