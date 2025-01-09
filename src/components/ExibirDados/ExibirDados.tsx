@@ -185,13 +185,15 @@ const ExibirDados = () => {
                                             </p>
                                         </div>
                                         <div className="flex-1  text-center">
-                                            {item.valor.toLocaleString(
-                                                'pt-BR',
-                                                {
-                                                    style: 'currency',
-                                                    currency: 'BRL',
-                                                },
-                                            )}
+                                            <p className="text-[#0f0f0f]">
+                                                {item.valor.toLocaleString(
+                                                    'pt-BR',
+                                                    {
+                                                        style: 'currency',
+                                                        currency: 'BRL',
+                                                    },
+                                                )}
+                                            </p>
                                         </div>
                                         <div className="flex-1  text-center flex justify-center items-center gap-2">
                                             <p className="text-[#0f0f0f]">
