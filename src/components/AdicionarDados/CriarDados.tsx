@@ -22,6 +22,10 @@ const CriarDados = () => {
                           valor: valor,
                           categoria: categoria,
                       },
+
+                      {
+                          headers: { 'Content-Type': 'application/json' },
+                      },
                   )
                 : await axios.post(
                       'https://testefinanceiro.vercel.app/adicionarDespesa',
@@ -29,6 +33,10 @@ const CriarDados = () => {
                           descricao: descricao,
                           valor: valor,
                           categoria: categoria,
+                      },
+
+                      {
+                          headers: { 'Content-Type': 'application/json' },
                       },
                   );
             setMensagemSucesso(<AlertSucess />);

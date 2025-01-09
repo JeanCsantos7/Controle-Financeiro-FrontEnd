@@ -28,7 +28,6 @@ const ExibirDados = () => {
             const responseReceita = await axios.get(
                 'https://testefinanceiro.vercel.app/receitas',
                 {
-                    headers: { 'Content-Type': 'application/json' },
                     withCredentials: true,
                 },
             );
@@ -37,7 +36,6 @@ const ExibirDados = () => {
             const responseDespesas = await axios.get(
                 'https://testefinanceiro.vercel.app/despesas',
                 {
-                    headers: { 'Content-Type': 'application/json' },
                     withCredentials: true,
                 },
             );
