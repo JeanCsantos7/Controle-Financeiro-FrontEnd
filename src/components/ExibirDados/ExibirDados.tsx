@@ -27,19 +27,11 @@ const ExibirDados = () => {
         try {
             const responseReceita = await axios.get(
                 'https://controlefinanceiro-back-phi.vercel.app/receitas',
-                {
-                    withCredentials: true,
-                    headers: { 'Content-Type': 'application/json' },
-                },
             );
             setReceitas(responseReceita.data);
 
             const responseDespesas = await axios.get(
                 'https://controlefinanceiro-back-phi.vercel.app/despesas',
-                {
-                    withCredentials: true,
-                    headers: { 'Content-Type': 'application/json' },
-                },
             );
             setDespesas(responseDespesas.data);
         } catch (error) {
