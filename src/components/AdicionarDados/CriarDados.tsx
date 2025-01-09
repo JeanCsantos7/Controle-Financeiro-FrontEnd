@@ -73,7 +73,7 @@ const CriarDados = () => {
                                     Descrição
                                 </label>
                                 <input
-                                    className="w-full outline-none rounded-md border-2 p-2 bg-[#FFF] border-[#696969]"
+                                    className="w-full text-[#0f0f0f] outline-none rounded-md border-2 p-2 bg-[#FFF] border-[#696969]"
                                     type="text"
                                     placeholder="Digite aqui a descrição"
                                     required
@@ -86,7 +86,7 @@ const CriarDados = () => {
                                     Valor
                                 </label>
                                 <input
-                                    className="w-full bg-[#FFF] outline-none rounded-md border-2 p-2 border-[#696969]"
+                                    className="w-full text-[#0f0f0f] bg-[#FFF] outline-none rounded-md border-2 p-2 border-[#696969]"
                                     type="number"
                                     placeholder="Digite aqui o Valor"
                                     required
